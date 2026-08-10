@@ -1,0 +1,73 @@
+android_app_import {
+    name: "CaptivePortalLoginGoogle",
+    owner: "google",
+    apk: "CaptivePortalLoginGoogle/CaptivePortalLoginGoogle.apk",
+    overrides: ["CaptivePortalLogin"],
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}
+
+android_app_import {
+    name: "DocumentsUIGoogle",
+    owner: "google",
+    apk: "DocumentsUIGoogle/DocumentsUIGoogle.apk",
+    overrides: ["DocumentsUI"],
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+}
+
+android_app_import {
+    name: "ModuleMetadataGoogle",
+    owner: "google",
+    apk: "ModuleMetadataGoogle/ModuleMetadataGoogle.apk",
+    overrides: ["ModuleMetadata"],
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+}
+
+android_app_import {
+    name: "NetworkStackGoogle",
+    owner: "google",
+    apk: "NetworkStackGoogle/NetworkStackGoogle.apk",
+    overrides: ["NetworkStack"],
+    required: ["com.google.android.networkstack.xml"],
+    preprocessed: true,
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+}
+
+prebuilt_etc {
+    name: "com.google.android.networkstack.xml",
+    src: "etc/permissions/com.google.android.networkstack.xml",
+    sub_dir: "permissions",
+}
+
+apex_contributions {
+    name: "captiveportallogin.google.contributions.prebuilt",
+}
+
+apex_contributions {
+    name: "documentsui.google.contributions.prebuilt",
+}
+
+apex_contributions {
+    name: "modulemetadata.google.contributions.prebuilt",
+}
+
+apex_contributions {
+    name: "networkstack.google.contributions.prebuilt",
+}
