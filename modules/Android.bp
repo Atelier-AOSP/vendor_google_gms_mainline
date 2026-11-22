@@ -352,7 +352,6 @@ apex_contributions {
 
 apex_contributions {
     name: "adservices.google.contributions.prebuilt",
-    defaults: ["adservices-module-sdk.contributions"],
     api_domain: "com.android.adservices",
     contents: ["prebuilt_com.google.android.adservices"],
 }
@@ -366,9 +365,15 @@ apex_contributions {
 
 apex_contributions {
     name: "art.google.contributions.prebuilt",
-    defaults: ["art-module-sdk.contributions"],
     api_domain: "com.android.art",
-    contents: ["prebuilt_com.google.android.art"],
+    contents: [
+        "prebuilt_com.google.android.art",
+        "prebuilt_libcore-platform-compat-config",
+        "prebuilt_core-lambda-stubs",
+        "prebuilt_core-lambda-stubs-for-system-modules",
+        "prebuilt_core-generated-annotation-stubs",
+        "prebuilt_service-art",
+    ],
 }
 
 apex_contributions {
@@ -386,16 +391,17 @@ apex_contributions {
 
 apex_contributions {
     name: "configinfrastructure.google.contributions.prebuilt",
-    defaults: ["configinfrastructure-sdk.contributions"],
     api_domain: "com.android.configinfrastructure",
     contents: ["prebuilt_com.google.android.configinfrastructure"],
 }
 
 apex_contributions {
     name: "connectivity.google.contributions.prebuilt",
-    defaults: ["tethering-module-sdk.contributions"],
     api_domain: "com.android.tethering",
-    contents: ["prebuilt_com.google.android.tethering"],
+    contents: [
+        "prebuilt_com.google.android.tethering",
+        "prebuilt_connectivity-platform-compat-config",
+    ],
 }
 
 apex_contributions {
@@ -420,7 +426,6 @@ apex_contributions {
 
 apex_contributions {
     name: "healthfitness.google.contributions.prebuilt",
-    defaults: ["healthfitness-module-sdk.contributions"],
     api_domain: "com.android.healthfitness",
     contents: ["prebuilt_com.google.android.healthfitness"],
 }
@@ -468,7 +473,6 @@ apex_contributions {
 
 apex_contributions {
     name: "permission.google.contributions.prebuilt",
-    defaults: ["permission-module-sdk.contributions"],
     api_domain: "com.android.permission",
     contents: ["prebuilt_com.google.android.permission"],
 }
@@ -509,7 +513,6 @@ apex_contributions {
 
 apex_contributions {
     name: "statsd.google.contributions.prebuilt",
-    defaults: ["statsd-module-sdk.contributions"],
     api_domain: "com.android.os.statsd",
     contents: ["prebuilt_com.google.android.os.statsd"],
 }
